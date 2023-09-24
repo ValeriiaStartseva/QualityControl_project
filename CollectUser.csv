@@ -1,0 +1,198 @@
+id,FullName,Login,IsManager,Password,IsDomain
+4,admin,admin,NULL,1156371652,NULL
+2192,Скороход Марина Вікторівна,MSkorokhod,NULL,NULL,1
+5323,Рубель Анна Сергеевна,ARubel,NULL,NULL,1
+4942,Коваленко Лариса Витальевна,LKovalenko,NULL,NULL,1
+5176,Деркач Уляна Сергіївна,UDerkach,NULL,NULL,1
+5325,Виливок Марина Олександрівна,MVylyvok,NULL,NULL,1
+2355,Мельничук Ірина Володимирівна,IMelnychuk,NULL,NULL,1
+5223,Налегач Юлія Вадимівна,INalegach,NULL,NULL,1
+5272,Мулюков Дмитро Миколайович,DMuliukov,NULL,NULL,1
+3534,Козел Ірина Григорівна,IKozel,NULL,NULL,1
+2742,Хільченко Олексій Миколайович,OKhilchenko,NULL,NULL,1
+3579,Шкурко Вікторія Олександрівна,VShkurko,NULL,NULL,1
+4439,Мостова Марія Олегівна,MMostova,NULL,NULL,1
+4679,Гуц Людмила Александровна,LGuts,NULL,NULL,1
+4306,Барташ Анастасия Сергеевна,ABartash,NULL,NULL,1
+4532,Осипчук Людмила Александровна,LOsypchuk,NULL,NULL,1
+4485,Ерошенко Ірина Юріївна,IEroshenko,NULL,NULL,1
+4822,Мазуренко Анна Олександрівна,AMazurenko,NULL,NULL,1
+4788,Дуброва Ірина Володимирівна,IDubrova,NULL,NULL,1
+5024,Кондра Владислава Генадіївна,VKondra,NULL,-252194024,1
+5107,Karpenko Olena Mykolaivna,OKarpenko,NULL,NULL,1
+5126,Губа Олена Володимирівна,OGuba,NULL,NULL,1
+5239,Сиворакша Ольга Николаевна,OSyvoraksha,NULL,NULL,1
+5273,Озеред Наталія Петрівна,NOzered,NULL,NULL,1
+4690,Андрейченко Татьяна Ивановна,TAndreichenko,NULL,NULL,1
+4631,Сидоренко Яна Тарасівна,ISydorenko,NULL,NULL,1
+2744,Бєлікова Ольга Володимирівна,OBielikova,NULL,NULL,1
+4729,Новікова Юлія Анатоліївна,YNovikova,NULL,NULL,1
+4728,Демиденко Діана Віталіївна,DDemydenko,NULL,NULL,1
+4233,Репецька Діана Олександрівна,DRepetska,NULL,NULL,1
+4463,Кубай Любов Іванівна,LKubay,NULL,NULL,1
+5189,Бондарь Анастасія Станіславівна,ABondar,NULL,NULL,1
+3871,Савенко Людмила Василівна,LSavenko,NULL,NULL,1
+4400,Ткаченко Олександр Володимирович,OVTkachenko,NULL,NULL,1
+2250,Адаменко Виктория Александровна,VAdamenko,NULL,NULL,1
+3551,Єфімчук Дарина Володимирівна,DIefimchuk,NULL,NULL,1
+4483,Волик Марія Олександрівна,MVolyk,NULL,NULL,1
+4731,Чернявська Руслана Русланівна,RCherniavska,NULL,NULL,1
+2427,Голодна Олена Михайлівна,OGolodna,NULL,NULL,1
+2906,Юрченко Тетяна Петрівна,TIurchenko,NULL,NULL,1
+3623,Чигоревська Анастасія Валеріївна,AChygorevska,NULL,NULL,1
+4850,Жорова Аліна Борисівна,AZhorova,NULL,NULL,1
+5157,Захарченко Юлія Миколаївна,IZakharchenko,NULL,NULL,1
+5299,Вовк В'ячеслав Миколайович,VVovk,NULL,NULL,1
+4711,Шапетко Наталія Миколаївна,NShapetko,NULL,NULL,1
+5117,Пундик Тетяна Ігорівна ,TPundyk,NULL,NULL,1
+2358,Денисенко Андрій Вікторович,ADenysenko,NULL,NULL,1
+3497,Зубок Дмитро Анатолійович,DZubok,NULL,NULL,1
+4815,Воронцова Влада Олександрівна,VVorontsova,NULL,NULL,1
+5089,Верховод Інна,IVerkhovod,NULL,NULL,1
+4769,Поправка Марина Віталіївна,MPopravka,NULL,NULL,1
+5124,Горкова Анна Володимирівна,AGorkova,NULL,NULL,1
+5160,Турбай Анна Ігорівна,ATurbai,NULL,NULL,1
+5159,Байков Владислав Сергійович,VBaikov,NULL,NULL,1
+5253,Заряда Ганна Василівна,GZariada,NULL,NULL,1
+5256,Михайлюк Олена Сергіївна,OMykhailiuk,NULL,NULL,1
+5283,Кісільова Оксана Анатолієвна,OKisilova,NULL,NULL,1
+5296,Коба Наталія Миколаївна,NKoba,NULL,NULL,1
+5318,В'юнник Анна Олександрівна,AViunnyk,NULL,NULL,1
+5326,Васько Іван Іванович,IVasko,NULL,NULL,1
+4816,Буцаєва Даря Леонідівна,DButsaieva,NULL,NULL,1
+4874,Цибанов Віктор Олександрович,VTsybanov,NULL,NULL,1
+4969,Гладка Інна Валеріївна,IHladka,NULL,NULL,1
+5055,Данкова Вікторія Миколаївна,VDankova,NULL,NULL,1
+5169,Ставицька Яна Вікторівна,IStavytska,NULL,NULL,1
+5242,Щербакова Наталія Василівна,NShcherbakova,NULL,NULL,1
+5259,Кочемасова Оксана Миколаївна,OKochemasova,NULL,NULL,1
+5269,Говтвань Лідія Анатолієвна,LGovtvan,NULL,NULL,1
+4890,Сабініна Валентина Петрівна,VSabinina,NULL,NULL,1
+5313,Горевий Євгеній Анатолійович,IGorevyi,NULL,NULL,1
+5327,Козченко Альона Віталіївна,AKozchenko,NULL,NULL,1
+3954,Наконечная Людмила Федоровна,LNakonechnaya,NULL,NULL,1
+4261,Опанащук Тетяна Валеріївна,TOpanashchuk,NULL,NULL,1
+4475,Желобков Олег Ігорович,OZhelobkov,NULL,NULL,1
+4459,Коваль Вікторія Ярославівна,VKoval,NULL,NULL,1
+4689,Новачук Олена Святославівна,ONovachuk,NULL,NULL,1
+4720,Дембовська Марія Тарасівна,MDembovska,NULL,NULL,1
+4865,Джумига Юлія Леонідівна,YDzhumiga,NULL,NULL,1
+5264,Максай Наталія Іванівна,NMaksai,NULL,NULL,1
+5266,Колосюк Володимир Олександрович,VKolosiuk,NULL,NULL,1
+5290,Деревяшкін Олександр Олександрович,ODereviashkin,NULL,NULL,1
+5286,Корнійчук Олена Юріївна,OKorniichuk,NULL,NULL,1
+5288,Яковенко Микола Сергійович,MIakovenko,NULL,NULL,1
+5279,Кельм Дмитро Станіславович,DKelm,NULL,NULL,1
+5300,Гурський Віталій Віталійович,VHurskyi,NULL,NULL,1
+4921,Музичук Діана Володимирівна,DMuzychuk,NULL,NULL,1
+3973,Суботін Ольга Іванівна,OSubotin,NULL,NULL,1
+4450,Миргородський Сергій Феодосійович,SMirgorodsky,NULL,NULL,1
+4619,Клімович Антоніна Андріївна,AKlimovych,NULL,NULL,1
+4005,Булачок Тетяна Борисівна,TBulachok,NULL,NULL,1
+4866,Бондар Іван Юрійович,IBondar,NULL,NULL,1
+4867,Ткачук Юлія Леонідівна,YTkachuk,NULL,NULL,1
+5185,Клімович Зінаїда Андріївна,ZKlimovych,NULL,NULL,1
+5267,Рокунець Тарас Леонідович,TRokunets,NULL,NULL,1
+5319,Панчук Тетяна Борисівна,TPanchuk,NULL,NULL,1
+5277,Птіцин Олексій Валерійович,OPtitsyn,NULL,NULL,1
+5287,Козир Дмитро Олександрович,DKozyr,NULL,NULL,1
+5302,Ветрова Катерина Вячеславівна,KVetrova,NULL,NULL,1
+4909,Ващук Марія Юріївна,MVashchuk,NULL,NULL,1
+5328,Шакір Ірина Миколаївна,IShakir,NULL,NULL,1
+5974,Ткач Катерина Богданівна, KTkach,NULL,NULL,NULL
+4149,Федорченко Оксана,_old,NULL,NULL,1
+2903,Скоба Анастасія Володимирівна,_oldASkoba,NULL,NULL,1
+3251,Кравченко Євгеній Валентинович,12,NULL,NULL,1
+5438,Сапон Валерія Ігорівна,123,NULL,NULL,1
+2646, Шевченко Євген Леонідович,1234,NULL,NULL,1
+2216,15.07.2010          ,15.07.2010          ,NULL,NULL,NULL
+2214,15072010            ,15072010            ,NULL,NULL,NULL
+171,AAbryutin           ,AAbryutin           ,NULL,NULL,NULL
+5403,Адаменко Олексій Вікторович,AAdamenko,NULL,NULL,1
+3755,Адруженко Андрій Олександрович,AAdruzhenko,NULL,NULL,1
+3147,Aleksandr Akapiev,AAkapiev,NULL,NULL,1
+3499,Ахремчик Альона Анатоліївна,AAkhremchyk,NULL,NULL,1
+4828,Коваленко Артур Артурович,AAKovalenko,NULL,NULL,1
+2845,Акимова Анастасия Станиславовна,AAkymova,NULL,NULL,1
+4757,Алексюк Анастасия Романовна,AAleksyuk,NULL,NULL,1
+5063,Алилуйко Андрей Олегович,AAliluyko,NULL,NULL,1
+4144,Алимов Артур,AAlimov,NULL,NULL,1
+4535,Андрущенко Алёна Николаевна ,AAndrushchenko,NULL,NULL,1
+3771,Андрущенко Анатолий,AAndrushchenko1,NULL,NULL,0
+3604,Анекунова Анастасія Олегівна,AAnekunova,NULL,NULL,1
+3434,Анісімова Анна Валеріївна,AAnisimova,NULL,NULL,1
+2330,Анос Андрій Олександрович,AAnos,NULL,NULL,1
+5749,Антоненко Анна Сергіївна,AAntonenko,NULL,NULL,1
+4145,Аникецева Анна Сергеевна,AAnykeitseva,NULL,NULL,1
+404,AAOLSHEVSKIY,AAOLSHEVSKIY,NULL,1849190365,NULL
+3225,Апанасенко Ангеліна Станіславівна,AApanasenko,NULL,NULL,1
+217,AAProkopenko        ,AAProkopenko        ,NULL,NULL,NULL
+2897,Артамонов Артур Олександрович,AArtamonov,NULL,NULL,1
+3008,Артемчук Антон Юрійович,AArtemchuk,NULL,NULL,1
+4230,Артемюк Артур,AArtemiuk,NULL,NULL,1
+3278,Артюх Артем Борисович,AArtiukh,NULL,NULL,1
+2712,Аткочунас Анастасія Володимирівна,AAtkochunas,NULL,NULL,1
+2344,Атрощенко Олександр Леонидович,AAtroshchenko,NULL,NULL,1
+4330,Авдеенко Анастасия Владимировна,AAvdeenko,NULL,NULL,1
+388,Авраменко Анна  Сергеевна,AAvramenko,NULL,-683448566,NULL
+2150,ababchenko,ABabchenko-Elife,NULL,1267349212,1
+410,Бабич Александр Вячеславович,ABABICH             ,NULL,-1262764839,NULL
+4105,Бабійчук Анна Іванівна ,ABabiichuk,NULL,NULL,1
+4415,Багній Анастасія Анатоліївна,ABagnii,NULL,NULL,1
+2155,Бахир Андрей Сергеевич,ABAKHYR,NULL,NULL,1
+5094,Бакун Анастасія Олександрівна,ABakun,NULL,NULL,1
+3991,Балджи Анастасія Володимирівна,ABaldzhy,NULL,NULL,1
+5676,Anastasyia Baluba,ABaluba,NULL,NULL,1
+4586,Баран Аліна Леонідівна ,ABaran,NULL,NULL,1
+4614,Бацура Алина Васильевна,ABatsura,NULL,NULL,1
+4520,Байрамов Аслан Эльшенович,ABayramov,NULL,NULL,1
+5852,Бегека Аліна ,ABeheka,NULL,NULL,1
+5795,Береза Аліна Олексіївна,ABereza,NULL,NULL,1
+4852,Бернадська Анастасія Володимирівна,ABernadska,NULL,NULL,1
+4759,Бешун Андрій Вікторович,ABeshun,NULL,NULL,1
+565,ABEZHENAR           ,ABEZHENAR           ,NULL,NULL,NULL
+3229,Аркад'єва Катерина Олександрівна,ABichuryn,NULL,NULL,1
+186,ABIH                ,ABIH                ,NULL,NULL,NULL
+4579,Білаш Анжела Сергіївна,ABilash,NULL,NULL,1
+4814,Білецька Аліна Сергіївна,ABiletska,NULL,NULL,1
+4351,Білецький Андрій Віталійович,ABiletskyi,NULL,NULL,1
+5134, Білоног Артем Олегович,ABilonog,NULL,NULL,1
+3457,Білоус Аліна Василівна,ABilous,NULL,NULL,1
+2896,Білоусько Анастасія Юріївна,ABilousko,NULL,NULL,1
+5181,Білик Анна,ABilyk,NULL,NULL,1
+192,ABLukashov          ,ABLukashov          ,NULL,NULL,NULL
+273,ABMalinovskiy       ,ABMalinovskiy       ,NULL,NULL,NULL
+4750,Боднарчук Андрій Михайлович,ABodnarchuk,NULL,NULL,1
+3554,Боклаг Антон Іванович,ABoklag,NULL,NULL,1
+5249,Бондаренко Анна Олександрівна,ABondarenko,NULL,NULL,1
+2876,Бондаренко Анатолій Анатолійович,ABondarenko_old,NULL,NULL,1
+5921,Боревич Анна Віталіївна,ABorevich,NULL,NULL,1
+2910,Борисовська Анастасія Вячеславівна,ABorysovska,NULL,NULL,1
+4581,Бовгиря Александр Петрович,ABovhyria,NULL,NULL,1
+3873,Бойко Андрій Миколайович,ABoyko,NULL,NULL,1
+2339,Боженко Аркадій Миколайович,ABozhenko,NULL,NULL,1
+2738,Бражненко Алла Олексіївна,ABrazhnenko,NULL,NULL,1
+380,ABUDNIK             ,ABUDNIK             ,NULL,NULL,NULL
+5275,Бугаєнко Анастасія Володимирівна,ABugaienko,NULL,NULL,1
+4751,Булаєнко Антон Олексійович,ABulanko,NULL,NULL,1
+3563,Булгакова Альона Володимирівна,ABulgakova,NULL,NULL,1
+5925,Булига Аделіна Миколаївна,ABulyga,NULL,NULL,1
+4497,Бура Анна Ігорівна,ABura,NULL,NULL,1
+3521,Бурнос Анастасія Леонідівна,ABurnos,NULL,NULL,1
+154,AButko              ,AButko,NULL,NULL,1
+5849,Буток Анастасія Олександрівна,AButok,NULL,NULL,1
+4058,Бибик Анна Николевна,ABybyk,NULL,NULL,1
+5538,Чарченко Олександр Павлович,ACharchenko,NULL,NULL,1
+5926,Чепурна Анна ,AChepurna,NULL,NULL,1
+3431,Черешенко Андрей Анатолиевич,AChereshenko,NULL,NULL,1
+2413,Черешко Альберт Іванович,AChereshko,NULL,NULL,1
+29,ACHERKASOVA         ,ACHERKASOVA         ,NULL,NULL,NULL
+394,AChernikov          ,AChernikov          ,NULL,NULL,NULL
+2863,Чуйко Анатолій Анатолійович,AChuiko,NULL,NULL,1
+4936,Чумак Алла Сергіївна,AChumak,NULL,NULL,1
+5750,Данько Антон Сергійович,ADanko,NULL,NULL,1
+4350,Данилюк Анжела Віталіївна,ADanyliuk,NULL,NULL,1
+3738,Дегтяр Анна Андріївна,ADegtiar,NULL,NULL,1
+157,ADEHAN              ,ADEHAN              ,NULL,NULL,NULL
+4479,Демедюк Андрій Іванович,ADemediuk,NULL,NULL,1
+5958,Демкова Анастасія,ADemkova,NULL,NULL,1
