@@ -7,10 +7,10 @@ class CollectUser(Base):
     __tablename__ = 'CollectUser'
 
     Id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    FullName = Column(String(45))
-    Login = Column(String(45))
-    IsManager = Column(String(45))
-    Password = Column(String(45))
+    FullName = Column(String(400))
+    Login = Column(String(400))
+    IsManager = Column(String(400))
+    Password = Column(String(400))
     IsDomain = Column(Integer)
 
 
@@ -18,17 +18,17 @@ class Monitoring(Base):
     __tablename__ = 'Monitoring'
 
     Id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    CallId = Column(String(12))
-    PhoneNumber = Column(String(11))
+    CallId = Column(String(400))
+    PhoneNumber = Column(String(400))
     MonitoringDate = Column(DateTime)
     ContractId = Column(Integer)
-    Strong = Column(String(100))
-    Weak = Column(String(100))
+    Strong = Column(String(400))
+    Weak = Column(String(400))
     ContactWithId = Column(Integer)
-    CallResultId = Column(String(45))
+    CallResultId = Column(String(400))
     CallTypeId = Column(Integer)
     DiscountMarkId = Column(Integer)
-    Comment = Column(String(45))
+    Comment = Column(String(400))
     ManagerId = Column(Integer, ForeignKey('Users.Id'))
     UserId = Column(Integer, ForeignKey('Users.Id'))
     ListType = Column(Integer)
@@ -41,9 +41,9 @@ class MonitoringDictionary(Base):
     __tablename__ = 'MonitoringDictionary'
 
     Id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    Name = Column(String(45))
+    Name = Column(String(400))
     Coefficient = Column(Integer)
-    Description = Column(String(200))
+    Description = Column(String(400))
     ListType = Column(Integer)
 
 
@@ -59,7 +59,7 @@ class Roles(Base):
     __tablename__ = 'Roles'
 
     Id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    Name = Column(String(45))
+    Name = Column(String(400))
     Level = Column(Integer)
 
 
@@ -68,12 +68,12 @@ class Users(Base):
 
     Id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     UserId = Column(Integer)
-    RoteId = Column(Integer)
+    RoleId = Column(Integer)
     EmploymentDate = Column(Date)
     DismissalDate = Column(Date)
-    Email = Column(String(45))
+    Email = Column(String(400))
     Probation = Column(Integer)
-    Password = Column(String(50))
+    Password = Column(String(400))
 
 
 

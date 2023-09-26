@@ -28,8 +28,7 @@ async def add_new_monitoring_points(monitoring_points: MonitoringDictionaryBase,
 
 @router.patch("/monitoring_dictionary/change_monitoring_points/{Id}")
 async def change_monitoring_name(name_id: int, name: str, db: Session = Depends(get_db)):
-    query = update(MonitoringDictionary).values(Name=name).where(MonitoringDictionary.Id == name_id).returning(
-        MonitoringDictionary.Name)
-    monitoring_name: str = db.execute(query).scalar()
+    query = update(MonitoringDictionary).values(Name=name).where(MonitoringDictionary.Id == name_id)
+    db.execute(query)
     db.commit()
     return Response(status_code=status.HTTP_200_OK, description='Changed!')
