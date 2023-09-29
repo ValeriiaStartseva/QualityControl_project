@@ -14,6 +14,17 @@ class CollectUser(Base):
     IsDomain = Column(Integer)
 
 
+class UsersManagers(Base):
+    __tablename__ = 'UsersManagers'
+
+    Id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    ManagerId = Column(Integer, ForeignKey('Users.Id'))
+    UserId = Column(Integer, ForeignKey('Users.Id'))
+
+    user = relationship('Users', lazy="selectin", foreign_keys=[UserId])
+    manager = relationship('Users', lazy="selectin", foreign_keys=[ManagerId])
+
+
 class Monitoring(Base):
     __tablename__ = 'Monitoring'
 
@@ -74,6 +85,11 @@ class Users(Base):
     Email = Column(String(400))
     Probation = Column(Integer)
     Password = Column(String(400))
+
+
+
+
+
 
 
 

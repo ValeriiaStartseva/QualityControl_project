@@ -8,9 +8,18 @@ class CollectUserBase(BaseModelORM):
     Id: int
     FullName: str
     Login: str
+
+
+class CollectUserDetails(CollectUserBase):
     IsManager: str
     Password: str
     IsDomain: int
+
+
+class UsersManagers(BaseModelORM):
+    Id: int
+    ManagerId: int
+    UserId: int
 
 
 class MonitoringBase(BaseModelORM):
@@ -35,7 +44,7 @@ class MonitoringDictionaryBase(BaseModelORM):
     Id: int | None = Field(None, description='gfhudefj')
     Name: str
     Coefficient: int
-    Description: str | None
+    Description: str | None = None
     ListType: int
 
 
@@ -48,16 +57,28 @@ class MonitoringScoresBase(BaseModelORM):
 class RolesBase(BaseModelORM):
     Id: int
     Name: str
+
+
+class RoleBase(RolesBase):
     Level: int
 
 
 class UsersBase(BaseModelORM):
     Id: int
     UserId: int
-    RoteId: int
+    RoleId: int
     EmploymentDate: date
-    DismissalDate: date
+    DismissalDate: date | None = None
     Email: str
     Probation: int
+
+
+class UserIn(UsersBase):
     Password: str
+
+
+class UserOut(UsersBase):
+    pass
+
+
 
