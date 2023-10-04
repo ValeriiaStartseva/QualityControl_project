@@ -3,6 +3,24 @@ from .database import Base
 from sqlalchemy.orm import relationship
 
 
+class BasicDictionary(Base):
+    __tablename__ = 'BasicDictionary'
+
+    Id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    Name = Column(String(400))
+    Description = Column(String(400))
+    Code = Column(String(400))
+    Specid = Column(Integer)
+
+
+class Roles(Base):
+    __tablename__ = 'Roles'
+
+    Id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    Name = Column(String(400))
+    Level = Column(Integer)
+
+
 class CollectUser(Base):
     __tablename__ = 'CollectUser'
 
@@ -35,9 +53,9 @@ class Monitoring(Base):
     ContractId = Column(Integer)
     Strong = Column(String(400))
     Weak = Column(String(400))
-    ContactWithId = Column(Integer)
-    CallResultId = Column(String(400))
-    CallTypeId = Column(Integer)
+    ContactWithId = Column(Integer, ForeignKey('BasicDictionary.Id'))
+    CallResultId = Column(Integer, ForeignKey('BasicDictionary.Id'))
+    CallTypeId = Column(Integer, ForeignKey('BasicDictionary.Id'))
     DiscountMarkId = Column(Integer)
     Comment = Column(String(400))
     ManagerId = Column(Integer, ForeignKey('Users.Id'))
@@ -46,6 +64,9 @@ class Monitoring(Base):
 
     user = relationship('Users', lazy="selectin", foreign_keys=[UserId])
     manager = relationship('Users', lazy="selectin", foreign_keys=[ManagerId])
+    contact = relationship('BasicDictionary', lazy="selectin", foreign_keys=[ContactWithId])
+    call_result = relationship('BasicDictionary', lazy="selectin", foreign_keys=[CallResultId])
+    call_type = relationship('BasicDictionary', lazy="selectin", foreign_keys=[CallTypeId])
 
 
 class MonitoringDictionary(Base):
@@ -62,34 +83,25 @@ class MonitoringScores(Base):
     __tablename__ = 'MonitoringScores'
 
     Id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    MonitoringId = Column(Integer)
-    ScoreTypeId = Column(Integer)
+    MonitoringId = Column(Integer, ForeignKey('Monitoring.Id'))
+    ScoreTypeId = Column(Integer,  ForeignKey('MonitoringDictionary.Id'))
 
-
-class Roles(Base):
-    __tablename__ = 'Roles'
-
-    Id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    Name = Column(String(400))
-    Level = Column(Integer)
+    monitoring = relationship('Monitoring', lazy="selectin", foreign_keys=[MonitoringId])
+    scope = relationship('MonitoringDictionary', lazy="selectin", foreign_keys=[ScoreTypeId])
 
 
 class Users(Base):
     __tablename__ = 'Users'
 
     Id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    UserId = Column(Integer)
-    RoleId = Column(Integer)
+    UserId = Column(Integer,  ForeignKey('CollectUser.Id'),)
+    RoleId = Column(Integer,  ForeignKey('Roles.Id'))
     EmploymentDate = Column(Date)
     DismissalDate = Column(Date)
     Email = Column(String(400))
     Probation = Column(Integer)
     Password = Column(String(400))
 
-
-
-
-
-
-
+    collect = relationship('CollectUser', lazy="selectin", foreign_keys=[UserId])
+    role = relationship('Roles', lazy="selectin", foreign_keys=[RoleId])
 

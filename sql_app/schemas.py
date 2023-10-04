@@ -1,11 +1,10 @@
 from pydantic import Field
-
 from sql_app.base_model import BaseModelORM
 from datetime import datetime, date
 
 
 class CollectUserBase(BaseModelORM):
-    Id: int
+    Id: int | None = None
     FullName: str
     Login: str
 
@@ -16,14 +15,14 @@ class CollectUserDetails(CollectUserBase):
     IsDomain: int
 
 
-class UsersManagers(BaseModelORM):
-    Id: int
+class UsersManagersBase(BaseModelORM):
+    Id: int | None = None
     ManagerId: int
     UserId: int
 
 
 class MonitoringBase(BaseModelORM):
-    Id: int
+    Id: int | None = None
     CallId: str
     PhoneNumber: str
     MonitoringDate: datetime
@@ -55,7 +54,7 @@ class MonitoringScoresBase(BaseModelORM):
 
 
 class RolesBase(BaseModelORM):
-    Id: int
+    Id: int | None = None
     Name: str
 
 
@@ -64,7 +63,7 @@ class RoleBase(RolesBase):
 
 
 class UsersBase(BaseModelORM):
-    Id: int
+    Id: int | None = None
     UserId: int
     RoleId: int
     EmploymentDate: date
@@ -75,6 +74,7 @@ class UsersBase(BaseModelORM):
 
 class UserIn(UsersBase):
     Password: str
+    ManagerId: int
 
 
 class UserOut(UsersBase):
