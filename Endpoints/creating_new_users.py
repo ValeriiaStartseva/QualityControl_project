@@ -42,7 +42,10 @@ async def get_true_boss(db: Session = Depends(get_db)):
 @router.post("/create_user")
 async def add_new_user(user_points: UserIn, db: Session = Depends(get_db)):
     hashed_password = hash_password(user_points.Password)
-    user_points_record = Users(**user_points.model_dump(exclude={'Id', 'ManagerId'}), Password=hashed_password)
+    user_points_record = Users(UserId=user_points.UserId, RoleId=user_points.RoleId,
+                               EmploymentDate=user_points.EmploymentDate, DismissalDate=user_points.DismissalDate,
+                               Email=user_points.Email, Probation=user_points.Probation, Password=hashed_password)
+    # user_points_record = Users(**user_points.model_dump(exclude={'Id', 'ManagerId'}))
     db.add(user_points_record)
     db.flush()
     last_row = db.query(Users).order_by(Users.Id.desc()).first()
