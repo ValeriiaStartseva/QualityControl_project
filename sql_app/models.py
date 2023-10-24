@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Date, DateTime, ForeignKey
+from sqlalchemy import Column, Integer, String, Date, DateTime, ForeignKey, Float
 from .database import Base
 from sqlalchemy.orm import relationship
 
@@ -50,13 +50,13 @@ class Monitoring(Base):
     CallId = Column(String(400))
     PhoneNumber = Column(String(400))
     MonitoringDate = Column(DateTime)
-    ContractId = Column(Integer)
+    ContractId = Column(Integer, ForeignKey('CollectContract.Id'))
     Strong = Column(String(400))
     Weak = Column(String(400))
     ContactWithId = Column(Integer, ForeignKey('BasicDictionary.Id'))
     CallResultId = Column(Integer, ForeignKey('BasicDictionary.Id'))
     CallTypeId = Column(Integer, ForeignKey('BasicDictionary.Id'))
-    DiscountMarkId = Column(Integer)
+    DiscountMarkId = Column(Integer, ForeignKey('BasicDictionary.Id'))
     Comment = Column(String(400))
     ManagerId = Column(Integer, ForeignKey('Users.Id'))
     UserId = Column(Integer, ForeignKey('Users.Id'))
@@ -67,6 +67,8 @@ class Monitoring(Base):
     contact = relationship('BasicDictionary', lazy="selectin", foreign_keys=[ContactWithId])
     call_result = relationship('BasicDictionary', lazy="selectin", foreign_keys=[CallResultId])
     call_type = relationship('BasicDictionary', lazy="selectin", foreign_keys=[CallTypeId])
+    contract = relationship('CollectContract', lazy="selectin", foreign_keys=[ContractId])
+    discount = relationship('BasicDictionary', lazy="selectin", foreign_keys=[DiscountMarkId])
 
 
 class MonitoringDictionary(Base):
@@ -105,3 +107,33 @@ class Users(Base):
     collect = relationship('CollectUser', lazy="selectin", foreign_keys=[UserId])
     role = relationship('Roles', lazy="selectin", foreign_keys=[RoleId])
 
+
+class CollectReestr(Base):
+    __tablename__ = 'CollectReestr'
+
+    Id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    RNumber = Column(Integer)
+    Name = Column(String(400))
+    ContractCnt = Column(Integer)
+    ClientCnt = Column(Integer)
+    CreationDate = Column(Date)
+    StartDate = Column(Date)
+    IsActual = Column(Integer)
+
+
+class CollectContract(Base):
+    __tablename__ = 'CollectContract'
+
+    Id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    ReestrId = Column(Integer, ForeignKey('CollectReestr.Id'))
+    ContractNum = Column(String(400))
+    CurrencyId = Column(Integer)
+    SummDelayBody = Column(Float)
+    SummDelayPercent = Column(Float)
+    SummDelayCommision = Column(Float)
+    Fine = Column(Float)
+    SummToClose = Column(Float)
+    DelayStartDate = Column(Date)
+    ClientId = Column(Integer)
+
+    reestr = relationship('CollectReestr', lazy="selectin", foreign_keys=[ReestrId])

@@ -25,18 +25,22 @@ class MonitoringBase(BaseModelORM):
     Id: int | None = None
     CallId: str
     PhoneNumber: str
-    MonitoringDate: datetime
     ContractId: int
     Strong: str
     Weak: str
     ContactWithId: int
-    CallResultId: str
+    CallResultId: int
     CallTypeId: int
     DiscountMarkId: int
     Comment: str
-    ManagerId: int
     UserId: int
     ListType: int
+    list_with_id_md: list[int]
+
+
+class MonitoringData(MonitoringBase):
+    MonitoringDate: datetime
+    ManagerId: int
 
 
 class MonitoringDictionaryBase(BaseModelORM):
@@ -79,6 +83,32 @@ class UserIn(UsersBase):
 
 class UserOut(UsersBase):
     pass
+
+
+class CollectReestr(BaseModelORM):
+    Id: int | None = None
+    RNumber: int
+    Name: str
+    ContractCnt: int
+    ClientCnt: int
+    CreationDat: date
+    StartDate: date
+    IsActual: int
+
+
+class CollectContract(BaseModelORM):
+
+    Id: int | None = None
+    ReestrId: int
+    ContractNum: str
+    CurrencyId: int
+    SummDelayBody: float
+    SummDelayPercent: float
+    SummDelayCommision:  float
+    Fine: float
+    SummToClose: float
+    DelayStartDate: date
+    ClientId: int
 
 
 
