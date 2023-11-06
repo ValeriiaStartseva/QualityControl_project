@@ -2,13 +2,13 @@ import datetime
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from get_db import get_db
-from sql_app.models import CollectContract, CollectReestr, Monitoring, BasicDictionary, MonitoringScores, CollectUser,\
-    Users, UsersManagers, MonitoringDictionary
+from sql_app.models import CollectContract, CollectReestr, Monitoring, BasicDictionary, MonitoringScores
 from sqlalchemy import and_
 from Endpoints.authorization import verify_token
 from fastapi.openapi.models import Response
 from starlette import status
 from sql_app.schemas import MonitoringBase
+from typing import Literal
 
 contract_router = APIRouter(prefix="/api/v0")
 
@@ -32,7 +32,9 @@ async def get_amount_of_owed_by_contract_id(contract_id: int, db: Session = Depe
 
 # 3.2
 @contract_router.get("/basic_dictionary")
-async def basic_dictionary(type_dictionary, result_with_contact: int = None, db: Session = Depends(get_db)):
+async def basic_dictionary(type_dictionary: Literal["контакт з", "результат дзвінка", "дисконт", "реструктуризація",
+                                                    "тип дзвінка"],
+                           result_with_contact: int = None, db: Session = Depends(get_db)):
     query = db.query(BasicDictionary)
     if "контакт з" in type_dictionary:
         query = query.filter(BasicDictionary.Specid == 2)
@@ -58,8 +60,7 @@ async def basic_dictionary(type_dictionary, result_with_contact: int = None, db:
 
 # 3.3 & 3.4
 @contract_router.post("/monitoring/add_new_monitoring_points")
-async def add_new_monitoring_points(monitoring_points: MonitoringBase,
-                                    db: Session = Depends(get_db),
+async def add_new_monitoring_points(monitoring_points: MonitoringBase, db: Session = Depends(get_db),
                                     current_user: dict = Depends(verify_token)):
     manager_id = int(current_user["manager_id"])  # Get the manager's ID
     current_date = datetime.date.today()    # Get the date
@@ -102,7 +103,7 @@ def data_from_monitoring(start_date: datetime.date = None,
                          end_date: datetime.date = None,
                          id_operator: int = None,
                          id_otsinshik: int = None,
-                         db: Session = Depends(get_db), current_user: dict = Depends(verify_token)):
+                         db: Session = Depends(get_db)):
 
     # filtering
     base_query = db.query(Monitoring)
@@ -122,30 +123,20 @@ def data_from_monitoring(start_date: datetime.date = None,
     monitoring_data_out = []
 
     for monitoring_record in monitoring_records:
-        contact_with = db.query(BasicDictionary).\
-            where(BasicDictionary.Id == monitoring_record.ContactWithId).first()
-        result_call = db.query(BasicDictionary).\
-            filter(BasicDictionary.Id == monitoring_record.CallResultId).first()
-        type_of_call = db.query(BasicDictionary).\
-            filter(BasicDictionary.Id == monitoring_record.CallTypeId).first()
-        discount = db.query(BasicDictionary).\
-            filter(BasicDictionary.Id == monitoring_record.DiscountMarkId).first()
-        collect_reestr = db.query(CollectReestr).join(CollectContract).filter(
-            CollectContract.ReestrId == CollectReestr.Id).first()
-        user = db.query(CollectUser).join(Users).filter(Users.Id == monitoring_record.UserId).first()
-        nks = db.query(CollectContract).filter(CollectContract.Id == monitoring_record.ContractId).first()
-        manager_ots = db.query(CollectUser).join(Users).filter(Users.Id == monitoring_record.ManagerId).first()
-        manager_sup = db.query(CollectUser).join(Users, and_(Users.UserId == CollectUser.Id)).\
-            join(UsersManagers, and_(Users.Id == UsersManagers.UserId)).\
-            filter(UsersManagers.ManagerId == monitoring_record.ManagerId).first()
-        list_total_score = db.query(MonitoringDictionary).\
-            join(MonitoringScores).\
-            join(Monitoring).filter(MonitoringScores.ScoreTypeId == MonitoringDictionary.Id,
-                                    Monitoring.Id == monitoring_record.Id).all()
+        contact_with = monitoring_record.contact
+        result_call = monitoring_record.call_result
+        type_of_call = monitoring_record.call_type
+        discount = monitoring_record.discount
+        collect_reestr = monitoring_record.contract.reestr
+        user = monitoring_record.user.collect
+        nks = monitoring_record.contract
+        manager_ots = monitoring_record.manager.collect
+        manager_sup = monitoring_record.user.manager.user.collect if monitoring_record.user.manager else None
+        list_total_score: list[MonitoringScores] = monitoring_record.monitoring_scores
         total_score = 0
         if list_total_score:
             for item in list_total_score:
-                coefficient = item.Coefficient
+                coefficient = item.score.Coefficient
                 total_score += coefficient
         else:
             total_score = 0

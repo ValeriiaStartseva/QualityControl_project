@@ -6,6 +6,7 @@ from Endpoints.creating_new_users import router as endpoint_router_add_new_user
 from Endpoints.authorization import login_router
 from Endpoints.users_end import users_router
 from Endpoints.contract import contract_router
+from Endpoints.reports import reports_router
 
 
 app = FastAPI()
@@ -18,6 +19,7 @@ router.include_router(endpoint_router)
 router.include_router(login_router)
 router.include_router(users_router)
 router.include_router(contract_router)
+router.include_router(reports_router)
 app.include_router(router)
 
 

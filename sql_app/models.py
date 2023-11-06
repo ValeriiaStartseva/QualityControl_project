@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Date, DateTime, ForeignKey, Float
 from .database import Base
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, Mapped
 
 
 class BasicDictionary(Base):
@@ -69,6 +69,8 @@ class Monitoring(Base):
     call_type = relationship('BasicDictionary', lazy="selectin", foreign_keys=[CallTypeId])
     contract = relationship('CollectContract', lazy="selectin", foreign_keys=[ContractId])
     discount = relationship('BasicDictionary', lazy="selectin", foreign_keys=[DiscountMarkId])
+    monitoring_scores: Mapped[list['MonitoringScores']] = relationship('MonitoringScores', lazy="selectin",
+                                                                       back_populates="monitoring", uselist=True)
 
 
 class MonitoringDictionary(Base):
@@ -89,7 +91,7 @@ class MonitoringScores(Base):
     ScoreTypeId = Column(Integer,  ForeignKey('MonitoringDictionary.Id'))
 
     monitoring = relationship('Monitoring', lazy="selectin", foreign_keys=[MonitoringId])
-    scope = relationship('MonitoringDictionary', lazy="selectin", foreign_keys=[ScoreTypeId])
+    score = relationship('MonitoringDictionary', lazy="selectin", foreign_keys=[ScoreTypeId])
 
 
 class Users(Base):
@@ -106,6 +108,8 @@ class Users(Base):
 
     collect = relationship('CollectUser', lazy="selectin", foreign_keys=[UserId])
     role = relationship('Roles', lazy="selectin", foreign_keys=[RoleId])
+    manager: Mapped['UsersManagers'] = relationship('UsersManagers', lazy="selectin", back_populates="user",
+                                                    primaryjoin="Users.Id == UsersManagers.UserId")
 
 
 class CollectReestr(Base):
