@@ -9,7 +9,7 @@ from fastapi.openapi.models import Response
 from starlette import status
 from sql_app.schemas import MonitoringBase
 from typing import Literal
-
+from Endpoints.filters import filter_monitoring_record1
 contract_router = APIRouter(prefix="/api/v0")
 
 
@@ -104,24 +104,8 @@ def data_from_monitoring(start_date: datetime.date = None,
                          id_operator: int = None,
                          id_otsinshik: int = None,
                          db: Session = Depends(get_db)):
-
-    # filtering
-    base_query = db.query(Monitoring)
-    filter_conditions = []
-    if start_date and end_date:
-        filter_conditions.append(and_(Monitoring.MonitoringDate >= start_date, Monitoring.MonitoringDate <= end_date))
-    if id_operator:
-        filter_conditions.append(Monitoring.UserId == id_operator)
-    if id_otsinshik:
-        filter_conditions.append(Monitoring.ManagerId == id_otsinshik)
-
-    if filter_conditions:
-        combined_filter = and_(*filter_conditions)
-        base_query = base_query.filter(combined_filter)
-    monitoring_records = base_query.all()
-
+    monitoring_records = filter_monitoring_record1(start_date, end_date, id_operator, id_otsinshik, db)
     monitoring_data_out = []
-
     for monitoring_record in monitoring_records:
         contact_with = monitoring_record.contact
         result_call = monitoring_record.call_result
